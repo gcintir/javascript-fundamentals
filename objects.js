@@ -26,5 +26,3 @@ let p1 = new Person("a", "b");
 let p2 = new Person("x", "y");
 console.log(p1.getFullName());
 console.log(p2.getFullName());
-
-
