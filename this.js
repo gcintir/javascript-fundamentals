@@ -52,3 +52,26 @@ getBrand.apply(audi, ["It's an "]);
 
 const canFetch = typeof globalThis.fetch === 'function';
 console.log(canFetch);
+
+
+let engineInfo = {
+    power : "v6",
+    type: "fuel"
+}
+
+let modelInfo = {
+    name : "bmw",
+    model : "x5",
+}
+
+let carInfo = {
+    engineInfo,
+    modelInfo
+}
+
+let carInfo2 = {
+    ...engineInfo,
+    ...modelInfo
+}
+console.log(carInfo);
+console.log(carInfo2);
