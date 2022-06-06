@@ -33,3 +33,22 @@ console.log(arr);
 const profile = null;
 const userMode = profile ?? 'admin'; // ?? nullish coalescing operator
 console.log(userMode);
+
+console.log(undefined || "...");
+console.log(undefined ?? "+++");
+
+const user = {
+    name : 'Jack',
+    age : 20,
+    profile : function () {
+        console.log("admin");
+    },
+    telephone: {
+        home: "1234",
+        work: "5678"
+    }
+}
+console.log(user.telephone2?.work);
+user.profile2?.();
+
+
