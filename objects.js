@@ -39,3 +39,43 @@ const account = Object.create(user, {
 console.log(account);
 console.log(account.hasOwnProperty("name"));
 console.log(account.hasOwnProperty("profile"));
+
+for (let prop in account) {
+    console.log(prop);
+}
+console.log(Object.keys(account));
+
+console.log(Object.keys(user));
+console.log(Object.values(user));
+console.log(Object.entries(user));
+
+console.log("------------------------");
+
+const displayer = ({color, size}) => {
+    console.log("color --> " + color);
+    console.log("size --> " + size);
+};
+let widget = {
+    color : "red",
+    size : "1px",
+    changeColor : function (color) {
+        this.color = color;
+    }
+};
+displayer(widget);
+let clonedWidget = Object.assign({}, widget);
+clonedWidget.changeColor('black');
+console.log(clonedWidget);
+console.log(widget);
+
+let {color : _color = 'black', size : _size = '0px', location : _location = 'middle'} = widget;
+console.log("_color", _color);
+console.log("_size", _size);
+console.log("_location", _location);
+
+
+
+
+
+
+
