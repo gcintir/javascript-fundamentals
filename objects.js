@@ -73,6 +73,43 @@ console.log("_color", _color);
 console.log("_size", _size);
 console.log("_location", _location);
 
+console.log("------------------------");
+
+function getUser (id, callback) {
+    let user = {
+        id : id,
+        username : 'admin'
+    };
+
+    callback ?. (user);
+
+    return user;
+};
+
+console.log(getUser(1));
+getUser(1, function (user) {
+    console.log('Retrieved user ' + JSON.stringify(user));
+});
+
+let name = 'Computer',status = 'On';
+let machine = {
+   name,
+   status
+};
+console.log(machine);
+
+let server = {
+    name: 'Server',
+    restart() {
+        console.log("The " + this.name + " is restarting...");
+    },
+    'starting up'() {
+        console.log("The " +  this.name + " is starting up!");
+    }
+};
+server.restart();
+server['starting up']();
+
 
 
 
