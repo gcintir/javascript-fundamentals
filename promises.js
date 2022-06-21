@@ -88,3 +88,61 @@ promise
 .catch(onRejected)
 .finally(() => console.log("finished"));
 */
+
+//////////////////////////////////////////////
+
+/*
+function generateNumber(num) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(num);
+    }, 1 * 1000);
+  });
+};
+
+generateNumber(10)
+.then((result) => {
+  return result * 2;
+})
+.then((result) => {
+  console.log(result);
+});
+*/
+
+///////////////////////////////////////////////
+
+
+function getUser(userId) {
+  return new Promise((resolve, reject) => {
+      console.log('Get the user from the database.');
+      setTimeout(() => {
+          resolve({
+              userId: userId,
+              username: 'admin'
+          });
+      }, 1000);
+  })
+}
+
+function getServices(user) {
+  return new Promise((resolve, reject) => {
+      console.log(`Get the services of ${user.username} from the API.`);
+      setTimeout(() => {
+          resolve(['Email', 'VPN', 'CDN']);
+      }, 3 * 1000);
+  });
+}
+
+function getServiceCost(services) {
+  return new Promise((resolve, reject) => {
+      console.log(`Calculate the service cost of ${services}.`);
+      setTimeout(() => {
+          resolve(services.length * 100);
+      }, 2 * 1000);
+  });
+}
+
+getUser(1)
+.then(getServices)
+.then(getServiceCost)
+.then(console.log);
